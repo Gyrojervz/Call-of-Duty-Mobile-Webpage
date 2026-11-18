@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call of Duty Wiki</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #101010;
+            color: #e5e5e5;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #080808;
+            padding: 20px 8%;
+            border-bottom: 2px solid #a5a5a5;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #b8a66a;
+        }
+
+        nav {
+            background: #191919;
+            padding: 12px 8%;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #c4b477;
+        }
+
+        .hero {
+            min-height: 330px;
+            padding: 70px 8%;
+            background:
+            linear-gradient(90deg, #000 5%, rgba(0,0,0,.65)),
+            url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: white;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        .search {
+            margin-top: 20px;
+        }
+
+        .search input {
+            width: 280px;
+            max-width: 100%;
+            padding: 12px;
+            border: 1px solid #777;
+            background: #151515;
+            color: white;
+            outline: none;
+        }
+
+        .search button {
+            padding: 12px 20px;
+            background: #b8a66a;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 30px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            color: #c4b477;
+            border-bottom: 1px solid #555;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: white;
+            margin: 15px 0 8px;
+        }
+
+        p {
+            color: #bbb;
+            margin-bottom: 12px;
+        }
+
+        .info {
+            background: #1c1c1c;
+            border: 1px solid #444;
+            padding: 18px;
+            height: fit-content;
+        }
+
+        .info img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .info h3 {
+            text-align: center;
+            color: #c4b477;
+        }
+
+        .info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info td {
+            border-top: 1px solid #444;
+            padding: 8px 4px;
+            font-size: 13px;
+        }
+
+        .toc {
+            background: #1b1b1b;
+            border: 1px solid #444;
+            padding: 18px;
+            width: fit-content;
+            min-width: 220px;
+            margin: 20px 0;
+        }
+
+        .toc a {
+            color: #c4b477;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .game-card {
+            background: #1c1c1c;
+            padding: 18px;
+            border: 1px solid #444;
+            transition: .3s;
+        }
+
+        .game-card:hover {
+            border-color: #c4b477;
+            transform: translateY(-4px);
+        }
+
+        .game-card h3 {
+            color: #c4b477;
+        }
+
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #444;
+            color: #777;
+        }
+
+        @media(max-width: 750px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CALL OF <span>DUTY</span> WIKI</div>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#history">History</a>
+    <a href="#games">Games</a>
+    <a href="#mobile">COD Mobile</a>
+    <a href="#weapons">Weapons</a>
+</nav>
+
+<div class="hero" id="home">
+    <h1>CALL OF DUTY</h1>
+    <p>
+        Explore the history, games, characters, weapons,
+        and universe of one of the world's most popular
+        first-person shooter franchises.
+    </p>
+
+    <div class="search">
+        <input type="text" id="searchInput"
+        placeholder="Search Call of Duty Wiki...">
+        <button onclick="searchWiki()">Search</button>
+    </div>
+</div>
+
+<div class="container">
+<div class="content-layout">
+
+<main id="wikiContent">
+
+<section>
+    <h2>Call of Duty</h2>
+    <p>
+        <b>Call of Duty (COD)</b> is a popular first-person
+        shooter video game franchise published by Activision.
+        The series features different historical and modern
+        military settings, campaigns, multiplayer modes,
+        and cooperative gameplay.
+    </p>
+
+    <p>
+        Since its debut in 2003, the franchise has expanded
+        into multiple sub-series, introducing new characters,
+        maps, weapons, and gameplay experiences.
+    </p>
+</section>
+
+<section>
+    <h2>Contents</h2>
+    <div class="toc">
+        <ol>
+            <li><a href="#history">History</a></li>
+            <li><a href="#games">Popular Games</a></li>
+            <li><a href="#mobile">Call of Duty Mobile</a></li>
+            <li><a href="#weapons">Weapons</a></li>
+            <li><a href="#gameplay">Gameplay</a></li>
+        </ol>
+    </div>
+</section>
+
+<section id="history">
+    <h2>History</h2>
+    <h3>2003 – The Beginning</h3>
+    <p>
+        The original Call of Duty was released in 2003.
+        It focused on World War II and introduced players
+        to cinematic military missions.
+    </p>
+
+    <h3>2007 – Modern Warfare</h3>
+    <p>
+        Call of Duty 4: Modern Warfare introduced a modern
+        military setting and became one of the franchise's
+        most influential releases.
+    </p>
+
+    <h3>2010 – Black Ops</h3>
+    <p>
+        Call of Duty: Black Ops introduced a new storyline
+        involving Cold War operations, espionage, and
+        memorable characters.
+    </p>
+
+    <h3>2019 – Modern Warfare Reboot</h3>
+    <p>
+        Modern Warfare returned with updated graphics,
+        gameplay mechanics, and a reimagined storyline.
+    </p>
+</section>
+
+<section id="games">
+    <h2>Popular Call of Duty Games</h2>
+
+    <div class="game-grid">
+
+        <div class="game-card">
+            <h3>Modern Warfare</h3>
+            <p>
+                A military shooter series known for
+                realistic environments and action-packed
+                campaigns.
+            </p>
+        </div>
+
+        <div class="game-card">
+            <h3>Black Ops</h3>
+            <p>
+                A series featuring secret operations,
+                historical conflicts, and iconic characters.
+            </p>
+        </div>
+
+        <div class="game-card">
+            <h3>Warzone</h3>
+            <p>
+                A free-to-play battle royale experience
+                featuring large maps and competitive matches.
+            </p>
+        </div>
+
+        <div class="game-card">
+            <h3>World War II</h3>
+            <p>
+                Games that explore historical battles
+                and military events during World War II.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="mobile">
+    <h2>Call of Duty: Mobile</h2>
+    <p>
+        Call of Duty: Mobile is a free-to-play mobile
+        first-person shooter released in 2019.
+        It brings familiar Call of Duty gameplay to
+        Android and iOS devices.
+    </p>
+
+    <h3>Game Modes</h3>
+    <ul>
+        <li>Multiplayer</li>
+        <li>Battle Royale</li>
+        <li>Ranked Matches</li>
+        <li>Zombie Mode (when available)</li>
+        <li>Limited-Time Events</li>
+    </ul>
+
+    <h3>Features</h3>
+    <p>
+        Players can customize their loadouts, unlock
+        operators, collect weapon skins, and compete
+        in different multiplayer maps.
+    </p>
+</section>
+
+<section id="weapons">
+    <h2>Weapons</h2>
+    <p>
+        Call of Duty features different weapon categories.
+        Each category offers different gameplay styles.
+    </p>
+
+    <ul>
+        <li><b>Assault Rifles:</b> Versatile weapons.</li>
+        <li><b>SMGs:</b> Designed for close-range combat.</li>
+        <li><b>Sniper Rifles:</b> Designed for long-range combat.</li>
+        <li><b>Shotguns:</b> Powerful at close range.</li>
+        <li><b>LMGs:</b> High ammunition capacity.</li>
+        <li><b>Pistols:</b> Secondary weapons.</li>
+    </ul>
+</section>
+
+<section id="gameplay">
+    <h2>Gameplay</h2>
+    <p>
+        Gameplay varies depending on the title.
+        Most games include campaign missions,
+        multiplayer battles, and cooperative modes.
+        Players can select different classes,
+        equipment, and customization options.
+    </p>
+</section>
+
+</main>
+
+<aside class="info">
+    <h3>CALL OF DUTY</h3>
+
+    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600"
+    alt="Gaming setup">
+
+    <table>
+        <tr>
+            <td><b>Developer</b></td>
+            <td>Various studios</td>
+        </tr>
+        <tr>
+            <td><b>Publisher</b></td>
+            <td>Activision</td>
+        </tr>
+        <tr>
+            <td><b>First Release</b></td>
+            <td>2003</td>
+        </tr>
+        <tr>
+            <td><b>Genre</b></td>
+            <td>First-person shooter</td>
+        </tr>
+        <tr>
+            <td><b>Platforms</b></td>
+            <td>PC, Console, Mobile</td>
+        </tr>
+        <tr>
+            <td><b>Popular Title</b></td>
+            <td>COD Mobile</td>
+        </tr>
+    </table>
+</aside>
+
+</div>
+</div>
+
+<footer>
+    <p>Call of Duty Wiki | Fan-made Information Website</p>
+    <p>Not affiliated with Activision.</p>
+    <p>© 2026 COD WIKI</p>
+</footer>
+
+<script>
+function searchWiki() {
+    let input = document.getElementById("searchInput")
+        .value.toLowerCase().trim();
+
+    let sections = document.querySelectorAll("#wikiContent section");
+
+    let found = false;
+
+    sections.forEach(section => {
+        if (section.innerText.toLowerCase().includes(input)
+            && input !== "") {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            found = true;
+        }
+    });
+
+    if (!found) {
+        alert(input === ""
+            ? "Please enter a search term."
+            : "No matching information found!");
+    }
+}
+</script>
+
+</body>
+</html>
